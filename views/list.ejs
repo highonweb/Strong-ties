@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <link href="https://fonts.googleapis.com/css2?family=Pangolin&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Strong Ties</title>
+    <meta name="description" content="An app that will be in your bookmarks once you click this link
+so click cautiously">
+<script src="/socket.io/socket.io.js"></script>
+<link rel="stylesheet" href="assets/css/chat.css">
+    <link rel="stylesheet" href="assets/css/list.css">
+</head>
+
+<body style="max-width: 100%; overflow-x: hidden;">
+    
+    <div id="mySidenav" class="sidenav">
+        <div class="msgheader">
+            <div style="display: flex; flex-flow: row nowrap;" >
+          <h1 style="top: 0px;">Family</h1>
+          <% for( let i = 0; i < users.length; i++ ) { %>
+            <img class='avatar' src="<%= users[i].avatar %>">
+            
+          <% } %>
+        </div>
+         
+        <p style="font-size: 60px; margin: 0;" >&times;</p>
+        </div>
+          <div id="messages">
+      
+          </div>
+          <div class="msgbar">
+            <input type="hidden" id="name" value="<%= user.avatar %> " >
+              <textarea id = "message" placeholder="Your Message Here"></textarea>
+              <button id="send"><i class="fas fa-paper-plane"></i></button>
+          </div>
+      </div>
+ 
+
+  <button id="fixed" style="width: 80px; height: 80px;" onclick="openNav(this)" ><i class="fas fa-comments"></i></button>
+
+  
+    <div id="main" >
+
+        <nav class="navbar">
+            <span class="navbar-toggle" id="js-navbar-toggle">
+                <i class="fas fa-bars"></i>
+            </span>
+            <a href="/gallery" class="logo"><img width="70px" height="70px" src="assets/img/family-love-logo-template_5586-71.jpg" alt=""> Strong Ties</a>
+            <ul class="main-nav" id="js-menu">
+        
+                
+                    <li><a class="nav-links" href="gallery">Gallery&nbsp;<i class="far fa-images"></i></a></li>
+                    <li><a class="nav-links" href="calendar">Calendar&nbsp;<i class="fa fa-calendar"></i></a></li>
+                    <li><a class="nav-links" href="list">Lists&nbsp;<i class="fa fa-th-list"></i></a></li>
+                    
+                    <li><a class="nav-links" href="budget">Budget&nbsp;<i class="fas fa-money-bill-wave"></i></a></li>
+                    <li><a class="nav-links" href="Funtime">Funtime&nbsp;<i class="fas fa-gamepad"></i></i></a></li>
+                    <li><a class="nav-links" href="logout">LogOut&nbsp;<i class="fa fa-sign-out"></i></a></li>
+                    <li>
+                        <a class="nav-links profile" href="profile"><%= user.name %> <img src="<%= user.avatar %>" style="border-radius: 50%; width: 15px; height: 15px; border: 2px solid #ee2b7a; "  alt=""></a>
+                    </li>      
+            </ul>
+        </nav>
+        <div class="list">
+            
+            <ul> 
+                <h1 style="color: white; text-align: center;"> Shopping List</h1>
+                <% for( let index = 0; index < family.shoppingList.length; index++ ) { %>
+                    <li onclick="remove(this)" > <span><%= family.shoppingList[index].name %></span> <img src="<%= family.shoppingList[index].avatar %>" style="border-radius: 50%; width: 30px; height: 30px; border: 2px solid #ee2b7a; "  alt=""></li>
+                <% } %>
+                <li id="inp">
+                    <input type="text"><input onclick="post();" type="button" value="+" >
+                </li>
+              
+            </ul>
+        </div>
+    </div>
+    <script>
+        var inpu=document.getElementsByTagName('input')       
+       function post(){
+       var data = JSON.stringify({ 
+          name: inpu[1].value, 
+          avatar: inpu[0].value,
+      })
+           fetch("https://strong-ties.herokuapp.com/api/additem", { 
+      
+      // Adding method type 
+      method: "POST", 
+        
+      // Adding body or contents to send 
+      body: data, 
+        
+      // Adding headers to the request 
+      headers: { 
+          "Content-type": "application/json"
+      } 
+  }) 
+
+}
+    </script>
+   <script>let mainNav = document.getElementById("js-menu");
+        let navBarToggle = document.getElementById("js-navbar-toggle");
+        
+        navBarToggle.addEventListener("click", function() {
+          mainNav.classList.toggle("active");
+        });</script>
+        <script>
+            var socket = io();
+            socket.on('list', addList)
+            function addList(item){
+               var ihtm = `
+                     <span>${item.name}</span> 
+                     <img src="${item.avatar}" style="border-radius: 50%; width: 30px; height: 30px; border: 2px solid #ee2b7a; "  alt="">
+                    `
+                    var listitem = document.createElement('li')
+                    listitem.onclick='remove(this)'
+                    listitem.innerHTML = ihtm
+                    document.getElementsByTagName('ul')[1].insertBefore(listitem,document.getElementsByTagName('ul')[1].children[1])
+
+            }
+            function remove(item){
+                data={
+                    name:item.children[0].innerHTML,
+                    avatar:item.children[1].src
+                    }
+                fetch("https://strong-ties.herokuapp.com/api/removeitem", { 
+      
+      // Adding method type 
+      method: "POST", 
+        
+      // Adding body or contents to send 
+      body: JSON.stringify(data), 
+        
+      // Adding headers to the request 
+      headers: { 
+          "Content-type": "application/json"
+      } 
+  }) 
+                item.classList.add("striked");
+                    
+            
+            }
+
+        </script>
+
+    <script src="https://kit.fontawesome.com/c5b9bcd338.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
+    <script src="assets/js/chat.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+</body>
+</html>

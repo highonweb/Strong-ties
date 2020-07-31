@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/css/profile.css">
+    <title>Strong Ties</title>
+</head>
+<body>
+    <span id="close" onclick="gohome();" >&times</span>
+    <div class="container">
+            <img src="<%= user.avatar %> " alt="Avatar">
+    
+            <form action="/gallery" method="post">
+                <input class="inp" name="name" placeholder="Name" type="text" value="<%= user.name %>" >
+                <input class="inp" name="familyid" placeholder="Family ID" type="text" value="<%= user.familyid %>" data-toggle="Family Id" readonly>
+                <input class="inp" name="date" placeholder="Date of Birth(DD/MM/YYYY)" type="text" value="<%= user.dob %>">
+                <input class="inp" name="pob" placeholder="Place of Birth" type="text" value="<%= user.pob %>">
+                <input class="inp" name="moninc" placeholder="Monthly income" type="number" value="<%= user.moninc %>" >
+                <input class="inp" name="contr" placeholder="% Contributed to family" type="number" min="0" max="100" value="<%= String(user.contr) %>" >
+                <input class="button" type="submit" value="Submit">
+            </form>
+        
+    </div>
+    <script>
+        function gohome() {
+            window.location.href = "gallery";
+        }
+    </script>
+</body>
+</html>

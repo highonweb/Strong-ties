@@ -1,0 +1,101 @@
+@import url('https://fonts.googleapis.com/css2?family=Courgette&display=swap');
+button{
+    width: 35%;
+    margin-top: 40px;
+height: 40px;
+color: white;
+font-weight: 900;
+font-size: 20px;
+font-family: 'Courgette', cursive;
+background-color: #ee2b7a;
+border-radius: 10px;
+border: none;
+transition: 1s;
+}
+button:hover{
+    background-color: pink;
+    color: black;
+}
+input{
+    margin: 20px;
+    padding: 10px;
+    width: 70%;
+    border: none;
+    border-bottom: gainsboro 2px solid;
+    transition: border-bottom 2s linear;
+}
+.fam{
+    display: flex;
+    flex-flow: row nowrap;
+    margin: 20px;
+    padding: 10px;
+    width: 70%;
+    border: none;
+}
+.fam input{
+    width: 89%;
+    margin: 0px;
+    padding: 0px;
+}
+input:focus{
+    outline: none;
+    border-bottom: #ee2b7a 2px solid
+}
+form{
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+}
+.box{
+    width: 400px;
+    height: 450px;
+    display: flex;
+    flex-flow: column nowrap;
+    border-radius: 5px;
+    justify-content: space-between;
+    flex-grow: 0;
+    background-color: #ffffff;
+    -webkit-box-shadow: 0px 0px 13px 1px rgba(0,0,0,0.55);
+-moz-box-shadow: 0px 0px 13px 1px rgba(0,0,0,0.55);
+box-shadow: 0px 0px 13px 1px rgba(0,0,0,0.55);
+}
+body{
+    display: flex;
+    justify-content: center;
+    
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+    max-width: 100%;
+    background-color: #ebebeb;
+}
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+.fb{
+    width: 10%;
+    height: auto;
+color: white;
+font-weight: 900;
+font-size: 20px;
+font-family: 'Courgette', cursive;
+background-color: #ee2b7a;
+border-radius: 50%;
+border: none;
+transition: 1s;
+}
+.image-holder{
+    width: 400px;
+    height: 400px;
+}
+a{
+    text-decoration: none;
+color: #888;
+align-self: center;
+}
+h2{
+    font-weight: 500;
+}

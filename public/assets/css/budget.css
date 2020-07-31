@@ -1,0 +1,129 @@
+@import url('https://fonts.googleapis.com/css2?family=Arvo&family=Pacifico&family=Quintessential&display=swap');
+*{
+    font-family: 'Arvo', serif;
+}
+table{
+    display: block;
+    font-size: 20px;
+    color: white;
+    width: 30vw;
+    border-collapse: collapse;
+    table-layout: fixed;   
+    flex-shrink: 0;
+}
+h2{
+    font-family: 'Quintessential', cursive;
+    font-size: 36px;
+}
+td,th{
+    border: black 1px solid ;
+    padding: 10px;
+    border-radius: 2px;
+}
+.con{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-content: center;
+    background-color: rgba(255, 188, 199,0.4);
+    width: 80vw;
+    padding: 60px;
+}
+canvas{
+    width: 200px;
+    align-self: center;
+}
+.container{
+    display: flex;
+    justify-content: center;
+}
+h1{
+    text-align: center;
+    position: relative;
+    top: 0px;
+}
+#contribut{
+    top: 45px;
+    font-family: 'Pacifico', cursive;
+}
+@media screen and (max-width: 768px) {
+    input[type=button]{
+        width: 70% !important;
+    }
+    table{
+        overflow-x: scroll;
+        table-layout: fixed;
+        width: 100%;
+        border-spacing: 0;
+    }
+    
+    .con{
+        flex-direction: column;
+        justify-content: center left;
+        align-content: center;
+        padding-right: 20px;
+        padding-left: 0px;
+    }
+    .row{
+        flex-direction: column !important;
+        align-self: center;
+    }
+}
+.row{
+    display: flex;
+    flex-direction: row;
+}
+.col{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: rgba(255, 188, 199,0.4);
+    flex-wrap: wrap;    
+    min-height: 40vh;
+    padding-left: 60px;
+    padding-right: 60px;
+}
+input{
+    width: 100%;
+    padding: 12px 20px;
+    box-sizing: border-box;
+    display: block;
+    background-color: #ee2b7a;
+    color: white;
+    font-weight: 800;
+    font-size: 30px;
+    font-family: 'Pacifico', cursive;
+    border: none;
+    border-bottom: aliceblue 5px solid;
+    border-radius: 5px;
+    
+  }
+  input[type=submit]{
+      cursor: pointer;
+  }
+  input[type=button]{
+    cursor: pointer;
+    width: 40%;
+    background-color: white;
+    color: #ee2b7a;
+    border-top: aliceblue 5px solid;
+}
+.reg{
+    justify-content: flex-start;
+}
+.reg div{
+    text-transform: uppercase;
+}
+#result{
+    border-radius: 10px;
+    padding: 50px;
+    width: 50vw;
+    background-color: rgba(255, 188, 199,0.4);
+}
+#inc{
+width: 100%;
+}
+#exp{
+width: 100%;
+}

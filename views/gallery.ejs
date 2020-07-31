@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Strong Ties</title>
+    <meta name="description" content="An app that will be in your bookmarks once you click this link
+so click cautiously">
+<script src="/socket.io/socket.io.js"></script>
+<link rel="stylesheet" href="assets/css/chat.css">
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+</head>
+
+<body style="max-width: 100%;">
+
+    <div id="mySidenav" class="sidenav">
+        <div class="msgheader">
+            <div style="display: flex; flex-flow: row nowrap;" >
+                <h1 style="top: 0px;">Family</h1>
+                        <% for( let i = 0; i < users.length; i++ ) { %>
+                            <img class='avatar' src="<%= users[i].avatar %>">
+                            
+                        <% } %>
+
+
+            </div>
+         
+          <p style="font-size: 60px;" >&times;</p>
+        </div>
+          <div id="messages">
+      
+          </div>
+          <div class="msgbar">
+            <input type="hidden" id="name" value="<%= user.avatar %> " >
+              <textarea id = "message" placeholder="Your Message Here"></textarea>
+              <button id="send"><i class="fas fa-paper-plane"></i></button>
+          </div>
+      </div>
+ 
+
+  <button id="fixed" style="width: 80px; height: 80px;" onclick="openNav(this)" ><i class="fas fa-comments"></i></button>
+<div id="main">
+    <nav class="navbar">
+        <span class="navbar-toggle" id="js-navbar-toggle">
+            <i class="fas fa-bars"></i>
+        </span>
+        <a href="/gallery" class="logo"><img width="70px" height="70px" src="assets/img/family-love-logo-template_5586-71.jpg" alt=""> Strong Ties</a>
+        <ul class="main-nav" id="js-menu">
+    
+            
+                <li><a class="nav-links" href="gallery">Gallery&nbsp;<i class="far fa-images"></i></a></li>
+                <li><a class="nav-links" href="calendar">Calendar&nbsp;<i class="fa fa-calendar"></i></a></li>
+                <li><a class="nav-links" href="list">Lists&nbsp;<i class="fa fa-th-list"></i></a></li>
+                
+                <li><a class="nav-links" href="budget">Budget&nbsp;<i class="fas fa-money-bill-wave"></i></a></li>
+                <li><a class="nav-links" href="Funtime">Funtime&nbsp;<i class="fas fa-gamepad"></i></a></li>
+                <li><a class="nav-links" href="logout">LogOut&nbsp;<i class="fa fa-sign-out"></i></a></li>
+                <li>
+                    <a class="nav-links profile" href="profile"><%= user.name %> <img src="<%= user.avatar %>" style="border-radius: 50%; width: 15px; height: 15px; border: 2px solid #ee2b7a; "  alt=""></a>
+                    
+                </li>        
+            </ul>
+    </nav>
+    <% for( let index = 0; index < family.photos.length; index++ ) { %>
+        <a data-fancybox="gallery" href="data:image/jpeg;base64,<%=family.photos[index].toString('base64')%>"><img src="data:image/jpeg;base64,<%=family.photos[index].toString('base64')%>" class="image" ></a>
+        <% } %>
+        <br><br><br><br>
+        <form action="/newpic" enctype="multipart/form-data" method="post">
+            <input id="image" type="file" onchange="form.submit()" name="img" accept="image/x-png,image/gif,image/jpeg" id="img" multiple><i class="fas fa-upload h"></i></input>
+        </form>
+       
+</div>
+   
+    <script>
+    window.onload = () => {
+    if(!window.location.hash) {
+        window.location = window.location + '#loaded';
+        window.location.reload(true);
+    }
+}
+    let mainNav = document.getElementById("js-menu");
+        let navBarToggle = document.getElementById("js-navbar-toggle");
+        
+        navBarToggle.addEventListener("click", function() {
+          mainNav.classList.toggle("active");})
+          
+        
+       </script>
+        <script>
+          
+        </script>
+    <script src="https://kit.fontawesome.com/c5b9bcd338.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
+    <script src="assets/js/chat.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+    <script src="assets/js/home.js"></script>
+</body>
+
+</html>
