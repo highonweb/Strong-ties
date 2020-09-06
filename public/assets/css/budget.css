@@ -1,6 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Arvo&family=Pacifico&family=Quintessential&display=swap');
-*{
-    font-family: 'Arvo', serif;
+
+body{
+    max-width: 100%;
+    overflow-x: hidden;
 }
 table{
     display: block;
@@ -12,7 +14,7 @@ table{
     flex-shrink: 0;
 }
 h2{
-    font-family: 'Quintessential', cursive;
+    font-family: 'Oleo Script Swash Caps', cursive;
     font-size: 36px;
 }
 td,th{
@@ -47,6 +49,12 @@ h1{
     font-family: 'Pacifico', cursive;
 }
 @media screen and (max-width: 768px) {
+    #inc h2{
+        font-size: 21px;
+        }
+        #exp h2{
+        font-size: 21px;
+        }
     input[type=button]{
         width: 70% !important;
     }
@@ -61,8 +69,7 @@ h1{
         flex-direction: column;
         justify-content: center left;
         align-content: center;
-        padding-right: 20px;
-        padding-left: 0px;
+        
     }
     .row{
         flex-direction: column !important;
@@ -83,10 +90,12 @@ h1{
     min-height: 40vh;
     padding-left: 60px;
     padding-right: 60px;
+    padding-bottom: 33px;
 }
 input{
     width: 100%;
     padding: 12px 20px;
+    margin-top: 10px;
     box-sizing: border-box;
     display: block;
     background-color: #ee2b7a;
@@ -113,17 +122,11 @@ input{
     justify-content: flex-start;
 }
 .reg div{
-    text-transform: uppercase;
+    text-transform: capitalize;
 }
 #result{
     border-radius: 10px;
     padding: 50px;
     width: 50vw;
     background-color: rgba(255, 188, 199,0.4);
-}
-#inc{
-width: 100%;
-}
-#exp{
-width: 100%;
 }

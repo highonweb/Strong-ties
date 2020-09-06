@@ -43,7 +43,7 @@ var monthNames = [
   }
   
   async function updatecal(month, year) {
-    fetch(`https://strong-ties.herokuapp.com/api/cal/${month}/${year}`)
+    fetch(`https://strong-ties.herokuapp.com/api/cal/${month}/${year}`,{method:'GET',headers:{'Access-Control-Allow-Origin': '*'}})
       .then((response) => response.json())
       .then((data) => {
         fetch(`https://strong-ties.herokuapp.com/api/cal/eve`)

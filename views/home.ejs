@@ -1,19 +1,17 @@
 <!DOCTYPE html>
-<html>
+<html style="scroll-behavior: smooth;" >
 
-<head>
+<head  >
     <meta charset="utf-8" >
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
     <title>Strong Ties</title>
     <meta name="description" content="An app that will be in your bookmarks once you click this link
 so click cautiously">
-
+<link href="https://fonts.googleapis.com/css2?family=Oleo+Script+Swash+Caps&family=Unkempt:wght@700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/styles.css">
 </head>
-
-
-
-<body style="max-width: 100%;" >
+<body style="max-width: 100%;">
+ 
   <nav class="navbar">
     <span class="navbar-toggle" id="js-navbar-toggle">
         <i class="fas fa-bars"></i>
@@ -22,148 +20,103 @@ so click cautiously">
     <ul class="main-nav" id="js-menu">
 
         
-
-            <li><a class="nav-links" href="login">Log In&nbsp;<i class="fa fa-sign-out"></i></a></li>
-        
+            <li><a class="nav-links" href="login">Login&nbsp;<i class="fa fa-sign-in"></i></a></li>
+            
     </ul>
 </nav>
-
-
-    <video id="videoBG" loop muted autoplay poster="img/videoframe.jpg" class="fullscreen-bg__video">
-        <source src="assets/img/bg.mp4" type="video/mp4">
-            
-    </video>
-    <div class="greet" style="height: 120vh;" >
-        <h1>Welcome to Strong Ties</h1>
-        <p>Greatest app at the service of a Greatest family</p>
+    <div class="greet" style="height: 100vh;" >
+        <h1 style="font-family: 'Unkempt', cursive;" >Welcome to Strong Ties</h1>
+        <p style="font-family: 'Oleo Script Swash Caps', cursive;">Greatest app at the service of a Greatest family</p>
         <br><br>
-        <a href="#end"><img src="assets/img/scroll.gif" onclick="scrollIntoView()" style="width: 100px; height: auto;" alt=""></a>
+        <a href="#end"><div class="arrow">
+          <span></span>
+          <span></span>
+          <span></span>
+
+</div></div></a>
     </div>
-    <div id="#features" style="height: 100vh;" >
-        <h1 class="feat">Features that make our app first in class</h1>
+    <div id="#features" style="height: 10vh;">
+        <h1 style="font-family: 'Oleo Script Swash Caps', cursive; background-color: white; color: #ee2b7a;" class="feat">Features that make our app first in class</h1>
         <div class="fbox" >
-            <div class="item" onclick="modal(1);" >
-                <h1>Moments together</h1>
-                <img class="card" src="assets/img/gallery.svg" alt="">
-            </div>
-            <div class="item" onclick="modal(2);" >
-                <h1> Shared Calendar</h1>
-                <img class="card" src="assets/img/calendar.svg" alt="">
-            </div>
+            
+            
         
-            <div class="item" onclick="modal(3);" >
-                <h1>Chat</h1>
-                <img class="card" src="assets/img/chat.svg" alt="">
-            </div>
-            <div class="item" onclick="modal(4);" >
-                <h1>Budget Management</h1>
-                <img class="card" src="assets/img/wallet.svg" alt="">
-            </div>
-            <div class="item" onclick="modal(5);" >
-                <h1>Shopping List</h1>
-                <img class="card" src="assets/img/list.svg" alt="">
-            </div>
+            
+            
+          
         
-            <div class="item" onclick="modal(6);" >
-                <h1> Fun Tools </h1>
-                <img class="card" src="assets/img/fun.svg" alt="">
-            </div>
+            
           </div>
     </div>
-    <div id="end" ></div>
-    <div id="1" class="modal">
-
+    <div id="end"></div>
+   
+<div class="modale">
         <!-- Modal content -->
-        <div class="modal-content" style="border-radius: 10px; text-align: center;">
-          <h1>A gallery to store and cherish <br> all those happy and sweet moments <br> you lot happend to spen together</h1>         
+        <div class="mods" style="border-radius: 10px; text-align: center;">
+          <h1 class="heading" >Moments together</h1>
+          <h1>A gallery to store and cherish <br> all those happy and sweet moments <br> you lot happend to spen together</h1>  
+            
+        </div>  
+                
+                <img class="card" src="assets/img/gallery.svg" alt="">
+               
+ </div>
+      <div class="modale">
+
+                <img class="card" src="assets/img/calendar.svg" alt="">
+        <!-- Modal content -->
+        <div class="mods" style="border-radius: 10px; text-align: center;">
+        <h1 class="heading"> Shared Calendar</h1>
+          <h1>A Calendar to plan and schedule <br> the events most dear to your family</h1> 
+
         </div>
       
+                
+            
       </div>
-      <div id="2" class="modal">
-
+      <div class="modale">
         <!-- Modal content -->
-        <div class="modal-content" style="border-radius: 10px; text-align: center;">
-          <h1>A Calendar to plan and schedule <br> the events most dear to your family</h1>         
-        </div>
-      
-      </div>
-      <div id="3" class="modal">
-
-        <!-- Modal content -->
-        <div class="modal-content" style="border-radius: 10px; text-align: center;">
+        <div class="mods" style="border-radius: 10px; text-align: center;">
+          <h1 class="heading">Chat</h1>
           <h1>Stay connected to your dear ones <br> all the time without the danger of those <br> whatsapp forwards </h1>         
         </div>
       
+                
+                <img class="card" src="assets/img/chat.svg" alt="">
+            
       </div>
-      <div id="5" class="modal">
-
+      <div class="modale">
         <!-- Modal content -->
-        <div class="modal-content" style="border-radius: 10px; text-align: center;">
-          <h1>Never forget to buy that thing your kid <br> has been pestering you for weeks again? <br> Strong ties to your rescue</h1>         
-        </div>
-      
-      </div>
-      <div id="4" class="modal">
-
-        <!-- Modal content -->
-        <div class="modal-content" style="border-radius: 10px; text-align: center;">
+                
+                <img class="card" src="assets/img/wallet.svg" alt="">
+        <div class="mods" style="border-radius: 10px; text-align: center;">
+          <h1 class="heading">Budget Management</h1>
           <h1>A neat tool to  <br> organise your earnings and spends  <br> Now you know whats eating your pockets </h1>         
         </div>
+        
+            
       
       </div>
-      <div id="6" class="modal">
-
+      <div class="modale">
         <!-- Modal content -->
-        <div class="modal-content" style="border-radius: 10px; text-align: center;">
-          <h1>And lot of other tools to make you life <br> a lot easier than it already is <br> Have fun with Strong Ties </h1>         
+        <div class="mods" style="border-radius: 10px; text-align: center;">
+          <h1 class="heading">Shopping List</h1>
+          <h1>Never forget to buy that thing your kid <br> has been pestering you for weeks again? <br> Strong ties to your rescue</h1>   
         </div>
-      
-      </div>
-      <script>
           
-function modal(no){
-    switch (no) {
-        case 1:
-            modal1 = document.getElementById("1");
-            modal1.style.display = "block";
-            break;
-        case 2:
-            modal1 = document.getElementById("2");
-            modal1.style.display = "block";
-            break;
-        case 3:
-            modal1 = document.getElementById("3");
-            modal1.style.display = "block";
-            break;
-        case 4:
-            modal1 = document.getElementById("4");
-            modal1.style.display = "block";
-            break;
-        case 5:
-            modal1 = document.getElementById("5");
-            modal1.style.display = "block";
-            break;
-        case 6:
-            modal1 = document.getElementById("6");
-            modal1.style.display = "block";
-            break;
-        default:
-            break;
-    }
-
-window.onclick = function(event) {
-  if (event.target == modal1) {
-    modal1.style.display = "none";
-  }
-} 
-
-}
-      </script>
-    
-
+                
+                <img class="card" src="assets/img/list.svg" alt="">
+            
+      </div>
+      <div class="modale">
+        <!-- Modal content --><img class="card" src="assets/img/fun.svg" alt="">
+        <div class="mods" style="border-radius: 10px; text-align: center;">
+          <h1 class="heading"> Fun Tools </h1>
+          <h1>And lot of other tools to make you life <br> a lot easier than it already is <br> Have fun with Strong Ties </h1>
+        </div>
+      </div>
     <script>let mainNav = document.getElementById("js-menu");
         let navBarToggle = document.getElementById("js-navbar-toggle");
-        
         navBarToggle.addEventListener("click", function() {
           mainNav.classList.toggle("active");
         });</script>

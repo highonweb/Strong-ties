@@ -145,6 +145,7 @@ app.use(function (err, req, res, next) {
 */
 
 // listen on port 3000
-http.listen(process.env.PORT || 3000, function () {
-  
+var port = process.env.PORT || 3001
+http.listen(port, () => {
+  console.log(`Express app listening on port ${port}`);
 });

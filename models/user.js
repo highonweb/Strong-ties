@@ -15,6 +15,9 @@ var UserSchema = new mongoose.Schema({
   dob:{
     type:String
   },
+  age:{
+    type:Number
+  },
   pob:{
     type:String
   },
@@ -58,16 +61,10 @@ UserSchema.statics.authenticate = function (username, password, callback) {
         return callback(err);
       }
       bcrypt.compare(password, user.password, function (err, result) {
-        if (password === user.password) {          
+        if (err) {          
+          return callback("there is an error");
+        } else {   
           return callback(null, user);
-        } else {
-          
-          bcrypt.hash(password,10,async function (err,hash){
-           
-          })
-          
-          
-          return callback();
         }
       })
     });
@@ -76,13 +73,9 @@ UserSchema.statics.authenticate = function (username, password, callback) {
 //hashing a password before saving it to the database
 UserSchema.pre('save', function (next) {
   var user = this;
+  user.password = bcrypt.hashSync(user.password,10)
   user.avatar = `https://api.adorable.io/avatars/285/${user.email}.png`
-  bcrypt.hash(user.password, 10, function (err, hash) {
-    if (err) {
-      return next(err);
-    }
-    next();
-  })
+  next()
 });
 
 

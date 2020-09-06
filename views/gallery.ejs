@@ -5,6 +5,11 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
     <title>Strong Ties</title>
+    <link rel="manifest" href="assets/js/manifest.json">
+    <link rel="apple-touch-icon" href="\assets\img\family-love-logo-template_5586-71.jpg">
+<meta name="apple-mobile-web-app-status-bar" content="#FFE1C4">
+<meta name="theme-color" content="#FFE1C4">
+<script src="/assets/js/app.js"></script>
     <meta name="description" content="An app that will be in your bookmarks once you click this link
 so click cautiously">
 <script src="/socket.io/socket.io.js"></script>
@@ -18,7 +23,7 @@ so click cautiously">
     <div id="mySidenav" class="sidenav">
         <div class="msgheader">
             <div style="display: flex; flex-flow: row nowrap;" >
-                <h1 style="top: 0px;">Family</h1>
+                <h1 style="top: 0px; font-family: 'Pacifico', cursive;">Family</h1>
                         <% for( let i = 0; i < users.length; i++ ) { %>
                             <img class='avatar' src="<%= users[i].avatar %>">
                             
@@ -74,12 +79,7 @@ so click cautiously">
 </div>
    
     <script>
-    window.onload = () => {
-    if(!window.location.hash) {
-        window.location = window.location + '#loaded';
-        window.location.reload(true);
-    }
-}
+
     let mainNav = document.getElementById("js-menu");
         let navBarToggle = document.getElementById("js-navbar-toggle");
         

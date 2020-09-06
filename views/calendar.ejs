@@ -21,7 +21,7 @@ so click cautiously"
     <div id="mySidenav" class="sidenav">
       <div class="msgheader">
         <div style="display: flex; flex-flow: row nowrap;" >
-          <h1 style="top: 0px;">Family</h1>
+          <h1 style="top: 0px; font-family: 'Pacifico', cursive;">Family</h1>
         <% for( let i = 0; i < users.length; i++ ) { %>
           <img class='avatar' src="<%= users[i].avatar %>">
           
@@ -31,7 +31,6 @@ so click cautiously"
         <p style="font-size: 60px;" >&times;</p>
       </div>
         <div id="messages">
-    
         </div>
         <div class="msgbar">
           <input type="hidden" id="name" value="<%= user.avatar %> " >
@@ -39,8 +38,6 @@ so click cautiously"
             <button id="send"><i class="fas fa-paper-plane"></i></button>
         </div>
     </div>
-
-
 <button id="fixed" style="width: 80px; height: 80px;" onclick="openNav(this)" ><i class="fas fa-comments"></i></button>
 
     <div id="main" >

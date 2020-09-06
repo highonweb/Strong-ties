@@ -9,6 +9,8 @@
     <link rel="stylesheet" href="assets/css/styles.css">
     <link rel="stylesheet" href="assets/css/budget.css">
     <link rel="stylesheet" href="assets/css/chat.css">
+    <link href="https://fonts.googleapis.com/css2?family=Oleo+Script+Swash+Caps&family=Unkempt:wght@700&display=swap" rel="stylesheet">
+
     </head>
     <body>
         <div id="main" >
@@ -44,13 +46,11 @@
                             <th>Contribution</th>
                         </thead>
                         <% for( let i = 0; i < users.length; i++ ) { %>
-        
                         <tr class="rocon">
                             <td><%= users[i].name %> </td>
                             <td class="contr">₹<%= users[i].contr %> </td>
                         </tr>
                         <% } %>
-        
                     </table>
                     <canvas id="chart"></canvas>
         
@@ -58,7 +58,7 @@
         
             </div>
             <div style="display: flex; justify-content: center; align-items: center; margin-top: 20px;" >
-            <input type="button" onclick="nm()" value="Start Fresh">
+            <input type="button" onclick="nm(this)" value="Start Fresh">
             </div>
             <br>
             <div class="container">
@@ -67,14 +67,14 @@
                         <div class='col'>
                             <h2>Income</h2>
                             <input type="text" placeholder="Name" id=incname>
-                            <input type="text" id="incamount" value="₹">
+                            <input type="text" id="incamount" placeholder="₹">
                             <input type="submit" value="🤑" onclick="Income();">
                         </div>
                         <br>
                         <div class=col>
                             <h2>Expenses</h2>
                             <input type="text" placeholder="Name" id=expname>
-                            <input type="text" id="expamount" value="₹">
+                            <input type="text" id="expamount" placeholder="₹">
                             <input type="submit" value="😭" onclick="Expense();">
                         </div>
         
@@ -91,7 +91,7 @@
                 <div class="con">
                     
                         <div id="inc" class='col reg'>
-                            <h2 style="padding-bottom: 20px;">Income</h2>
+                            <h2 style="padding-bottom: 20px; ">Income</h2>
                             <% for( let index = 0; index < family.income.length; index++ ) { %>
                                 <div><h2 class="income"> <%= family.income[index].name %> - <%= family.income[index].value %></h2></div>
                             <% } %>
@@ -115,7 +115,7 @@
         <div id="mySidenav" class="sidenav">
                 <div class="msgheader">
                     <div style="display: flex; flex-flow: row nowrap;" >
-                  <h1 style="top: 0px;">Family</h1>
+                  <h1 style="top: 0px; font-family: 'Pacifico', cursive;">Family</h1>
                   <% for( let i = 0; i < users.length; i++ ) { %>
                     <img class='avatar' src="<%= users[i].avatar %>">
                     

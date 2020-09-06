@@ -18,10 +18,9 @@ so click cautiously">
     <div id="mySidenav" class="sidenav">
         <div class="msgheader">
             <div style="display: flex; flex-flow: row nowrap;" >
-          <h1 style="top: 0px;">Family</h1>
+          <h1 style="top: 0px; font-family: 'Pacifico', cursive;">Family</h1>
           <% for( let i = 0; i < users.length; i++ ) { %>
             <img class='avatar' src="<%= users[i].avatar %>">
-            
           <% } %>
         </div>
          
@@ -39,10 +38,7 @@ so click cautiously">
  
 
   <button id="fixed" style="width: 80px; height: 80px;" onclick="openNav(this)" ><i class="fas fa-comments"></i></button>
-
-  
     <div id="main" >
-
         <nav class="navbar">
             <span class="navbar-toggle" id="js-navbar-toggle">
                 <i class="fas fa-bars"></i>
@@ -80,10 +76,15 @@ so click cautiously">
     <script>
         var inpu=document.getElementsByTagName('input')       
        function post(){
+    
        var data = JSON.stringify({ 
           name: inpu[1].value, 
           avatar: inpu[0].value,
       })
+      if(inpu[1].value==''){
+        alert("Item can't be empty")
+        return false
+      }
            fetch("https://strong-ties.herokuapp.com/api/additem", { 
       
       // Adding method type 
@@ -115,7 +116,7 @@ so click cautiously">
                      <img src="${item.avatar}" style="border-radius: 50%; width: 30px; height: 30px; border: 2px solid #ee2b7a; "  alt="">
                     `
                     var listitem = document.createElement('li')
-                    listitem.onclick='remove(this)'
+                    listitem.setAttribute('onclick','remove(this)')
                     listitem.innerHTML = ihtm
                     document.getElementsByTagName('ul')[1].insertBefore(listitem,document.getElementsByTagName('ul')[1].children[1])
 
